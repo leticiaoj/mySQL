@@ -49,6 +49,11 @@ values ("Loratadina", 50, 8.80, "2024-05-06");
 INSERT INTO tb_produtos(nome, quantidade, preco, dtvalidade)
 values ("Shampoo Jonhsons", 10, 20.80, "2025-05-05");
 
+ALTER TABLE tb_produtos
+ADD CONSTRAINT fk_tb_produtos_tb_categorias
+FOREIGN KEY (id)
+REFERENCES tb_categorias(id);
+
 SELECT * FROM tb_produtos;
 
 SELECT * FROM tb_produtos WHERE preco > 50.0;
