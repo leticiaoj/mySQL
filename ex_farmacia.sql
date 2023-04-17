@@ -57,7 +57,7 @@ SELECT * FROM tb_produtos WHERE preco BETWEEN 5.00 AND 60.00;
 
 SELECT * FROM tb_produtos WHERE nome LIKE "%c%";
 
-SELECT p.*, c.medicamento, c.cosmético FROM tb_produtos p INNER JOIN tb_categorias c ON p.id = c.id;
+SELECT tb_produtos.id, tb_produtos.nome, tb_produtos.quantidade, tb_produtos.preco, tb_produtos.dtvalidade, tb_categorias.medicamento, tb_categorias.cosmético FROM tb_produtos INNER JOIN tb_categorias ON (tb_categorias.id = tb_produtos.id);
 
-SELECT p.* FROM tb_produtos p INNER JOIN tb_categorias c ON p.id = c.id WHERE c.cosmetico = true;
+SELECT tb_produtos.id, tb_produtos.nome, tb_produtos.quantidade, tb_produtos.preco, tb_produtos.dtvalidade FROM tb_produtos INNER JOIN tb_categorias ON tb_produtos.id = tb_categorias.id WHERE tb_categorias.cosmético = true;
 
